@@ -293,3 +293,37 @@ bear
 
 1. `cut` command and its use `-d` is used for delimeter where as `,` is delimeter and -f option to specify that we want to extract the second field (column).
 
+1. use of `uniq` command.
+1. The `uniq` command has a `-c` option which gives a count of the number of times a line occurs in its input.
+
+```bash
+geek@g3:~/test$ cut -d, -f 2 data.csv 
+deer
+rabbit
+raccoon
+rabbit
+deer
+fox
+rabbit
+bear
+
+geek@g3:~/test$ cut -d, -f 2 data.csv | sort
+bear
+deer
+deer
+fox
+rabbit
+rabbit
+
+geek@g3:~/test$ cut -d, -f 2 data.csv | sort | uniq -c
+      1 bear
+      2 deer
+      1 fox
+      3 rabbit
+      1 raccoon
+      
+geek@g3:~/test$ cut -d, -f 2 data.csv | sort | uniq -c | wc -l
+5
+```
+## Loops
+
