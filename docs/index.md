@@ -1,6 +1,12 @@
-# Commands I have Learnt:
+# The Unix Shell
 
-```bash
+The Unix shell has been around longer than most of its users have been alive. It has survived because it’s a powerful tool that allows users to perform complex and powerful tasks, often with just a few keystrokes or lines of code. It helps users automate repetitive tasks and easily combine smaller tasks into larger, more powerful workflows.
+
+Use of the shell is fundamental to a wide range of advanced computing tasks, including high-performance computing. These lessons will introduce you to this powerful tool.
+
+## Introducing the Shell and Navigating Files and Directories
+ 
+```bash	
 $ ls
 ```
 ls : list Command ==> List  information  about  the FILEs in Current Directory.
@@ -18,39 +24,40 @@ man cammand is use for manual displaying of any command.
 ```bash
 $ cd
 ```
-cd : Change the shell working directory.
-cd . : stands for the current directory.
-cd / : stands for the root directory.
-cd ../.. : this command goes up two levels.
-cd ~ : stands for the user’s home directory.
-cd : shortcut to go back to the user’s home directory.
-cd .. : goes up one level.
+1. cd : Change the shell working directory.
+1. cd . : stands for the current directory.
+1. cd / : stands for the root directory.
+1. cd ../.. : this command goes up two levels.
+1. cd ~ : stands for the user’s home directory.
+1. cd : shortcut to go back to the user’s home directory.
+1. cd .. : goes up one level.
 
 
-The file system is responsible for managing information on the disk.
+- The file system is responsible for managing information on the disk.
 
-Information is stored in files, which are stored in directories (folders).
+- Information is stored in files, which are stored in directories (folders).
 
-Directories can also store other directories, which then form a directory tree.
+- Directories can also store other directories, which then form a directory tree.
 
-pwd prints the user’s current working directory.
+- `pwd` prints the user’s current working directory.
 
-ls [path] prints a listing of a specific file or directory; ls on its own lists the current working directory.
+- `ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory.
 
-cd [path] changes the current working directory.
+- `cd [path]` changes the current working directory.
 
-Most commands take options that begin with a single -.
+- Most commands take options that begin with a single `-`.
 
-Directory names in a path are separated with / on Unix, but \ on Windows.
+- Directory names in a path are separated with `/` on Unix, but `\` on Windows.
 
-/ on its own is the root directory of the whole file system.
+- `/` on its own is the root directory of the whole file system.
 
-An absolute path specifies a location from the root of the file system.
+- An absolute path specifies a location from the root of the file system.
 
-A relative path specifies a location starting from the current location.
+- A relative path specifies a location starting from the current location.
 
-. on its own means ‘the current directory’; .. means ‘the directory above the current one’.
+- `.` on its own means ‘the current directory’; `..` means ‘the directory above the current one’.
 
+![pic for General Syntax](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg) 
 ```bash
 $ mkdir [File Name]
 ```
