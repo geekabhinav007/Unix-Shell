@@ -139,4 +139,67 @@ $ mkdir -p sub1/subsub1 sub2/subsub1/subsubsub1 sub2/subsub2
 
 ## Pipes and Filters
 
+`wc` - `wc` is the ‘word count’ command: it counts the number of lines, words, and characters in files (from left to right, in that order).
+
+```bash
+geek@g3:~/test$ wc test.txt 
+ 12 103 596 test.txt
+ 
+geek@g3:~/test$ wc *.txt
+  4  12  48 test2.txt
+ 12 103 596 test.txt
+ 16 115 644 total
+```
+- We can use following flag with `wc` command to display words, characters. and line specificly.
+	- `-m` for characters.
+	- `-l` for lines.
+	- `-w` for words.
+
+```bash
+geek@g3:~/test$ wc -m *.txt
+ 48 test2.txt
+588 test.txt
+636 total
+
+geek@g3:~/test$ wc -l *.txt
+  4 test2.txt
+ 12 test.txt
+ 16 total
+ 
+geek@g3:~/test$ wc -w *.txt
+ 12 test2.txt
+103 test.txt
+115 total
+```
+
+### Capturing output from commands
+
+- `>` is used to redirect file output.
+- `wc -l *.txt > lengths.txt` this command will right all the output to the file name `lengths.txt` instead of printing on the screeen.
+- if `length.txt` exit it is overwritten.
+- if we had a 6000 file with name `.txt` then `cat` command will display data in very bad manner so use `less` command.
+- `cat` has the disadvantage that it always dumps the whole file onto your screen. More useful in practice is the command `less`, which you use with `less lengths.txt`. This displays a screenful of the file, and then stops. You can go forward one screenful by pressing the spacebar, or back one by pressing b. Press q to quit.
+
+- `sort` vs `sort -n` 
+- We will also use the `-n` option to specify that the sort is numerical instead of alphanumerical. 
+- `head -n 2 length.txt` will display first 2 line of file `length.txt`.
+- similrly `tail -n 2 length.txt` will display lst 2 line of file `length.txt`.
+
+```bash
+geek@g3:~/test$ head sorted.txt 
+  0 length.txt
+  0 test3.txt
+ 12 test2.txt
+103 test.txt
+115 total
+
+geek@g3:~/test$ head -n 2 sorted.txt   
+0 length.txt
+0 test3.txt
+  
+geek@g3:~/test$ tail -n 2 sorted.txt 
+103 test.txt
+115 total
+```
+
 
