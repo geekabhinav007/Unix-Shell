@@ -9,17 +9,17 @@ Use of the shell is fundamental to a wide range of advanced computing tasks, inc
 ```bash	
 $ ls
 ```
-ls : list Command ==> List  information  about  the FILEs in Current Directory.
+`ls` : list Command ==> List  information  about  the FILEs in Current Directory.
 
 ```bash
 $ pwd
 ```
-pwd : current working directory (Present working directory).
+`pwd` : current working directory (Present working directory).
 
 ```bash
 $ man [Command Name]
 ```
-man cammand is use for manual displaying of any command.
+`man` cammand is use for manual displaying of any command.
 
 ```bash
 $ cd
@@ -72,20 +72,19 @@ $ touch my_file.txt
 ```bash
 $ cp [OPTION] Source Destination
 $ cp shell.md /home/geek/Documents
-
 ```
 
 - `cp` : `cp` command is used to copy files and directories. It requires at least two arguments.
 - while copying a Folder/directory we should use `-r` flag so that evey folders and file are recursevily copied to the new destination.
 - Copy with Multiple directory and files to abc folder.
+
 ```bash
 $ cp -r 1/2 sub1/subsub1 abc/
 ```
-```bash
 
+```bash
 $ mv [Option] source destination
 $ mv shell.md /home/geek/Document
-
 ```
 
 - `mv` : `mv` command is used to move or rename files and directories. It also requires at least two arguments.
@@ -132,11 +131,12 @@ $ mkdir -p sub1/subsub1 sub2/subsub1/subsubsub1 sub2/subsub2
 
 - ? matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
 
-- Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`.
-
 - The shell does not have a trash bin: once something is deleted, it’s really gone.
 
 - Most files’ names are `something.extension`. The extension isn’t required, and doesn’t guarantee anything, but is normally used to indicate the type of data in the file.
 
 - Depending on the type of work you do, you may need a more powerful text editor than Nano.
+
+## Pipes and Filters
+
 
