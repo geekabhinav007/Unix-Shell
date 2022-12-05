@@ -221,6 +221,7 @@ geek@g3:~/test$
 ### Passing output to another command
 
 - The vertical bar, |, between the two commands is called a pipe. It tells the shell that we want to use the output of the command on the left as the input to the command on the right.
+
 ```bash
 geek@g3:~/test$ cat length.txt 
   0 length.txt
