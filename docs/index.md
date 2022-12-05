@@ -61,12 +61,12 @@ $ cd
 ```bash
 $ mkdir [File Name]
 ```
-mkdir : Create the DIRECTORY(ies), if they do not already exist.
+`mkdir` : Create the DIRECTORY(ies), if they do not already exist.
 
 ```bash
 $ touch my_file.txt
 ```
-touch : The touch command generates a new file called my_file.txt in your current directlsory. You can observe this newly generated file by typing ls at the command line prompt. my_file.txt can also be viewed in your GUI file explorer.
+`touch` : The touch command generates a new file called my_file.txt in your current directlsory. You can observe this newly generated file by typing ls at the command line prompt. my_file.txt can also be viewed in your GUI file explorer.
 
 ```bash
 cp [OPTION] Source Destination
@@ -74,7 +74,7 @@ cp shell.md /home/geek/Documents
 
 ```
 
-cp : “cp” command is used to copy files and directories. It requires at least two arguments.
+`cp` : `cp` command is used to copy files and directories. It requires at least two arguments.
 
 ```bash
 
@@ -83,13 +83,14 @@ $ mv shell.md /home/geek/Document
 
 ```
 
-mv : “mv” command is used to move or rename files and directories. It also requires at least two arguments.
+`mv` : `mv` command is used to move or rename files and directories. It also requires at least two arguments.
 
 ```bash
 $ rm -i shell.md
 rm: remove regular file 'shell.md'? 
 ```
-rm -i : The -i option will prompt before (every) removal (use Y to confirm deletion or N to keep the file). The Unix shell doesn’t have a trash bin, so all the files removed will disappear forever. By using the -i option, we have the chance to check that we are deleting only the files that we want to remove.
+- `rm -i` : The `-i` option will prompt before (every) removal (use Y to confirm deletion or N to keep the file). The Unix shell doesn’t have a trash bin, so all the files removed will disappear forever. By using the -i option, we have the chance to check that we are deleting only the files that we want to remove.
+
 
 
 
