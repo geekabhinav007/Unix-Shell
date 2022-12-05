@@ -268,3 +268,28 @@ geek@g3:~/test$ wc *.txt | sort -n | head -n 4
 1. `[first] | [second]` is a pipeline: the output of the first command is used as the input to the second.
 
 1. The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
+
+```bash
+geek@g3:~/test$ cat data.csv 
+2012-11-05,deer,5
+2012-11-05,rabbit,22
+2012-11-05,raccoon,7
+2012-11-06,rabbit,19
+2012-11-06,deer,2
+2012-11-06,fox,4
+2012-11-07,rabbit,16
+2012-11-07,bear,1
+
+geek@g3:~/test$ cut -d , -f 2 data.csv
+deer
+rabbit
+raccoon
+rabbit
+deer
+fox
+rabbit
+bear
+```
+
+1. `cut` command and its use `-d` is used for delimeter where as `,` is delimeter and -f option to specify that we want to extract the second field (column).
+
