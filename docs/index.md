@@ -201,5 +201,69 @@ geek@g3:~/test$ tail -n 2 sorted.txt
 103 test.txt
 115 total
 ```
+- `>` and `>>` are different in manner of overwriting.
+
+```bash
+geek@g3:~/test$ echo I am abhi > test01.txt
+geek@g3:~/test$ echo I am abhi > test01.txt
+
+geek@g3:~/test$ echo I am abhi >> test02.txt
+geek@g3:~/test$ echo I am abhi >> test02.txt
+
+geek@g3:~/test$ cat test01.txt 
+I am abhi
+
+geek@g3:~/test$ cat test02.txt 
+I am abhi
+I am abhi
+geek@g3:~/test$ 
+```
+### Passing output to another command
+
+- The vertical bar, |, between the two commands is called a pipe. It tells the shell that we want to use the output of the command on the left as the input to the command on the right.
+```bash
+geek@g3:~/test$ cat length.txt 
+  0 length.txt
+ 12 test2.txt
+  0 test3.txt
+103 test.txt
+115 total
+
+geek@g3:~/test$ sort -n length.txt | head -n 2
+  0 length.txt
+  0 test3.txt
+```
+```bash
+geek@g3:~/test$ wc *.txt > data_unsort.txt | sort -n data.txt | head -n 4
+  0   0   0 data.txt
+  0   0   0 test3.txt
+  1   1   6 testfile.txt
+  1   3  10 test01.txt
+  
+geek@g3:~/test$ wc *.txt | sort -n | head -n 4
+   0    0    0 test3.txt
+   1    1    6 testfile.txt
+   1    3   10 test01.txt
+   2    6   20 test02.txt
+```
+
+![redirection and pipes](https://swcarpentry.github.io/shell-novice/fig/redirects-and-pipes.svg)
 
 
+1. `wc` counts lines, words, and characters in its inputs.
+
+1. `cat` displays the contents of its inputs.
+
+1. `sort` sorts its inputs.
+
+1. `head` displays the first 10 lines of its input.
+
+1. `tail` displays the last 10 lines of its input.
+
+1. `command > [file]` redirects a command’s output to a file (overwriting any existing content).
+
+1. `command >> [file]` appends a command’s output to a file.
+
+1. `[first] | [second]` is a pipeline: the output of the first command is used as the input to the second.
+
+1. The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
