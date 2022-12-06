@@ -327,3 +327,110 @@ geek@g3:~/test$ cut -d, -f 2 data.csv | sort | uniq -c | wc -l
 ```
 ## Loops
 
+### Syntax of loop in bash.
+
+```bash
+for thing in list_of_things
+do
+    operation_using $thing    # Indentation within the loop is not required, but aids legibility
+done
+```
+example:
+
+```bash
+geek@g3:~/test$ for filename in test01.txt test2.txt test.txt test3.txt 
+> do
+> head -n 2 $filename
+> done
+I am abhi
+ vdnv d
+ adv dav
+- `rm [path]` removes (deletes) a file.
+```
+
+1. A `for` loop repeats commands once for every thing in a list.
+
+1. Every `for` loop needs a variable to refer to the thing it is currently operating on.
+
+1. Use `$name` to expand a variable (i.e., get its value). `${name}` can also be used.
+
+1. Do not use spaces, quotes, or wildcard characters such as ‘*’ or ‘?’ in filenames, as it complicates variable expansion.
+
+1. Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.
+
+1. Use the up-arrow key to scroll up through previous commands to edit and repeat them.
+
+1. Use `Ctrl+R` to search through the previously entered commands.
+
+1. Use `history` to display recent commands, and `![number]` to repeat a command by number.
+
+## Shell Script and Finding things.
+
+- Save commands in files (usually called shell scripts) for re-use.
+
+- `bash [filename]` runs the commands saved in a file.
+
+```bash
+geek@g3:~/test$ grep abhi test02.txt 
+I am abhi
+I am abhi
+
+geek@g3:~/test$ grep deer data.csv 
+2012-11-05,deer,5
+2012-11-06,deer,2
+
+$grep -w "The" data.csv
+```
+- `-w` flg is used to limit matches to word boundaries.
+- `-n` flag used to print line number along with line.
+- use the option `-i` to make our search case-insensitive:
+
+```bash
+geek@g3:~/test$  grep -n "it" grepTest.txt
+5:With searching comes loss
+9:Yesterday it worked
+10:Today it is not working
+
+geek@g3:~/test$ grep -nw "it" grepTest.txt 
+9:Yesterday it worked
+10:Today it is not working
+```
+```bash
+geek@g3:~/test$ grep -nwi "the" grepTest.txt 
+1:The Tao that is seen
+2:Is not the true Tao, until
+6:and the presence of absence:
+
+geek@g3:~/test$ grep -nw "the" grepTest.txt 
+2:Is not the true Tao, until
+6:and the presence of absence:
+```
+- we want to use the option `-v` to invert our search.
+- If we use the `-r` (recursive) option, grep can search for a pattern recursively through a set of files in subdirectories.
+```bash
+geek@g3:~/test$ grep -r abhi
+test01.txt:I am abhi
+test02.txt:I am abhi
+test02.txt:I am abhi
+test2.txt:I am abhinav
+```
+- `grep --help`
+- `grep` real power comes with wildcard not with option.
+- `The technical name for these is regular expressions, which is what the ‘re’ in ‘grep’ stands for.`
+```bash
+geek@g3:~/test$ wc -m $(find -name "*.txt")
+ 560 ./data.txt
+  18 ./testfile01.txt
+ 588 ./test.txt
+ 218 ./grepTest.txt
+  66 ./length.txt
+   0 ./test3.txt
+  10 ./test01.txt
+  20 ./test02.txt
+   6 ./testfile.txt
+ 312 ./data_unsort.txt
+  48 ./test2.txt
+  66 ./sorted.txt
+1912 total
+```
+# THANK YOU
