@@ -1,3 +1,5 @@
+[Regular Expresssion](regex.md) | [SDE](sde.md) | [AWK](awk.md)
+
 # The Unix Shell
 
 The Unix shell has been around longer than most of its users have been alive. It has survived because it’s a powerful tool that allows users to perform complex and powerful tasks, often with just a few keystrokes or lines of code. It helps users automate repetitive tasks and easily combine smaller tasks into larger, more powerful workflows.
@@ -67,7 +69,7 @@ $ mkdir [File Name]
 ```bash
 $ touch my_file.txt
 ```
-`touch` : The touch command generates a new file called my_file.txt in your current directlsory. You can observe this newly generated file by typing ls at the command line prompt. my_file.txt can also be viewed in your GUI file explorer.
+`touch` : touch is used to change file timestamps. Update the access and modification times of each FILE to the current time.
 
 ```bash
 $ cp [OPTION] Source Destination
@@ -103,10 +105,10 @@ rm: remove regular file 'shell.md'?
 $ mkdir -p sub1/subsub1 sub2/subsub1/subsubsub1 sub2/subsub2
 ```
 - we can create file using many editors some of them are:
-	- Nano
-	- VI
-	- GEDIT
-	- VIM
+	- nano
+	- vi (visual editor)
+	- gedit
+	- vim (visual editor improved)
 	- Notepad e.t.c
 
 - `-i` flag use for interactiveness use `-i` flag if you are doing some essential things such as deleting.
@@ -434,3 +436,18 @@ geek@g3:~/test$ wc -m $(find -name "*.txt")
 1912 total
 ```
 # THANK YOU
+# Question from Seminar?
+- what is Unix
+- what is shell
+- Gnu and Unix 
+- Gnu Linux operating 
+- What is freecad
+- What is difference between `-` ans `--` before flag?
+- what is the actual used of `touch` command?
+- Does -M in wc count space
+- `>` And `>>` operator 
+- More and less difference 
+- Use of sort with uniq
+
+[Regular Expresssion](regex.md) | [SDE](sde.md) | [AWK](awk.md)
+
